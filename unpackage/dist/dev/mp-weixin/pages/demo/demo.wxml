@@ -1,0 +1,1 @@
+<view><view class="view-box animated" hover-stay-time="800" hover-class="view-box-hover rubberBand">第一个box</view><text selectable="{{true}}">这是text \n 这是text \n  这是text \n</text><view class="view-box" id="view2">第一个box</view></view>
