@@ -10,6 +10,7 @@
 			<view>3</view>
 			<view>4</view>
 		</view> -->
+<<<<<<< HEAD
 		<view class="box">
 			<view class="box-item">1</view>
 			<view class="box-item">2</view>
@@ -18,6 +19,16 @@
 			<view class="box-item">5</view>
 			<view class="box-item">6</view> -->
 		</view>
+=======
+		
+<!-- 		<view class="box">
+			<view class="box-item">1</view>
+			<view class="box-item">2</view>
+			<view class="box-item">3</view>
+			<view class="box-item">4</view>
+		</view> -->
+		
+>>>>>>> 20d98f25232b73522cd555134eea085b64ad0155
 	</view>
 
 </template>
@@ -95,6 +106,7 @@
 .box>view:nth-of-type(odd){
 	background: pink;
 } */
+<<<<<<< HEAD
 .box{
 	border: 1upx solid #CCCCCC;
 	height: 500upx;
@@ -138,5 +150,29 @@
 }
 .box-item:nth-of-type(3){
 	flex: 1;
+=======
+
+/* .box{
+	border: 1upx solid #CCCCCC;
+	height: 500upx;
+	width: 100%;
 }
+.box-item{
+	background: #007AFF;
+	color: #FFFFFF;
+	height: 200upx;
+	width: 200upx;
+	line-height: 200upx;
+	font-size: 30upx;
+	font-weight: bold;
+	text-align: center;
+}
+.box-item:nth-of-type(odd){
+	background: #007AFF;
+>>>>>>> 20d98f25232b73522cd555134eea085b64ad0155
+}
+.box-item:nth-of-type(even){
+	background: #09BB07;
+	
+} */
 </style>
