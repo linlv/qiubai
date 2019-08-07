@@ -1,13 +1,11 @@
 <template>
 	<view>
-		<view :class="classname">
-			<view>{{username}}</view>
-			<view>{{userinfo.username}}</view>
-			<!-- <view>{{itemdata}}</view> -->
-		</view>
-		<button type="default" @tap="changeUsername('Alex')">修改名字</button>
-		<button type="default" @tap="changeClassname('box2')">修改</button>
-		
+		<!-- <view class="box" :class="['bor','fs']">box</view> -->
+		<!-- <view class="box" :class="[class1, class2]">box</view> -->
+		<!-- <view class="box" :class="[age>10?class1:'', sex=='女'?class2:'']">box</view> -->
+		<!-- <view class="box" :class="{'bor':isActive,'fs':isfs}">box</view> -->
+		<!-- style支持的语法 -->
+		<view class="box" :style="{'color': Color, 'font-size': size+'px'}">222</view>
 	</view>
 
 </template>
@@ -16,59 +14,38 @@
 	export default {
 		data() {
 			return {
-				username: "Tom",
-				userinfo:{
-					username:"Jack"
-				},
-				classname: "box"
+				class1:"bor",
+				class2:"fs",
+				age: 11,
+				sex: "女",
+				isActive: false,
+				isfs: true,
+				Color: "#333333",
+				size: 10
 			}
 		},
 		methods:{
-			changeUsername:function(name){
-				this.userinfo.username = "aaa"+name
-			},
-			changeClassname:function(newclass){
-				this.classname = newclass
-			}
+
 		}
 	}
 </script>
 
 <style>
 .box{
-	border: 1upx solid #333333;
-	height: 500upx;
-	width: 100%;
-	display: flex;
-}
-.box2{
-	border: 1upx solid #1AAD19;
-	height: 500upx;
-	width: 100%;
-	display: flex;
-}
-.box>view{
-	background: #007AFF;
-	color: white;
-	font-weight: bold;
-	font-size: 35upx;
-	display: flex;
-	flex: 1;
-	height: 500upx;
-	justify-content: center;
-	align-items: center;
-	border: 1upx solid #FFFFFF;
-}
-.box2>view{
 	background: #09BB07;
-	color: white;
-	font-weight: bold;
-	font-size: 35upx;
+	color: #FFFFFF;
+	width: 350upx;
+	height: 350upx;
+	border-radius: 100%;
 	display: flex;
-	flex: 1;
-	height: 500upx;
 	justify-content: center;
 	align-items: center;
-	border: 1upx solid #FFFFFF;
+	font-size: 50upx;
+}
+.bor{
+	border: 10upx solid #007AFF;
+}
+.fs{
+	font-size: 100upx;
 }
 </style>
