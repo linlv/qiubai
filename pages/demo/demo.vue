@@ -1,11 +1,25 @@
 <template>
 	<view>
-		<!-- <view class="box" :class="['bor','fs']">box</view> -->
-		<!-- <view class="box" :class="[class1, class2]">box</view> -->
-		<!-- <view class="box" :class="[age>10?class1:'', sex=='女'?class2:'']">box</view> -->
-		<!-- <view class="box" :class="{'bor':isActive,'fs':isfs}">box</view> -->
-		<!-- style支持的语法 -->
-		<view class="box" :style="{'color': Color, 'font-size': size+'px'}">222</view>
+		<!-- <view class="box" v-if="isshow">box</view>
+		<button type="default" @tap="changeshow()">隐藏</button> -->
+		
+		<!-- <view class="box" v-if="(age>20)">{{age>30?'中年人':'年轻人'}}</view>
+		<button type="default" @tap="changeAge()">修改</button> -->
+		
+		<!-- <view class="box" v-show="isshow">显示</view>
+		<button type="default" @tap="changeshow()">隐藏</button> -->
+		
+		<template v-if="isshow">
+			<view class="box">box</view>
+		</template>
+		<template v-else-if="isshow2">
+			<view class="box" style="background: #2C405A;">box2</view>
+		</template>
+		<template v-else>
+			<view class="box" style="background: #09BB07;">box2</view>
+		</template>
+		<button type="default" @tap="changeshow()">隐藏</button>
+		
 	</view>
 
 </template>
@@ -14,38 +28,31 @@
 	export default {
 		data() {
 			return {
-				class1:"bor",
-				class2:"fs",
-				age: 11,
-				sex: "女",
-				isActive: false,
-				isfs: true,
-				Color: "#333333",
-				size: 10
+				isshow:true,
+				age:10,
+				isshow2:true
 			}
 		},
 		methods:{
-
+			changeshow:function(){
+				this.isshow = !this.isshow;
+			},
+			changeAge:function(){
+				this.age+=11;
+			}
 		}
 	}
 </script>
 
 <style>
 .box{
-	background: #09BB07;
+	background: #007AFF;
 	color: #FFFFFF;
+	font-size: 50upx;
 	width: 350upx;
 	height: 350upx;
-	border-radius: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 50upx;
-}
-.bor{
-	border: 10upx solid #007AFF;
-}
-.fs{
-	font-size: 100upx;
 }
 </style>
