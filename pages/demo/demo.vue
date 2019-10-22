@@ -1,9 +1,10 @@
 <template>
 	<view>
-		<!-- <view>{{name}}</view> -->
-		<view>{{num}}</view>
-		<view>{{num>10?'Yes':'No'}}</view>
-		<button type="primary" @tap="change()">修改</button>
+		
+		<view>
+			{{Transweight}}
+		</view>
+		
 	</view>
 </template>
 
@@ -11,23 +12,17 @@
 	export default{
 		data(){
 			return{
-				name:"我是一个名称",
-				num:0
+				//体重
+				weight:1900
 			}
 		},
-		watch:{
-			name:function(val){
-				console.log(val)
-			},
-			num:function(val){
-				console.log(val)
+		computed:{
+			Transweight:function(){
+				return this.weight>1000 ? (this.weight/1000)+'kg' : this.weight+'g'
 			}
 		},
 		methods:{
-			change:function(){
-				// this.name="被修改"
-				this.num++
-			}
+			
 		}
 	}
 </script>
