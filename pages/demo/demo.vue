@@ -1,74 +1,37 @@
 <template>
 	<view>
-		<!-- <view class="font">{{name}}</view>
-		<view class="box" @tap="clickEvent">按钮</view> -->
-		<view class="box1" @tap.stop="box1event()">
-			外面
-			<view class="box2" @tap.stop="box2event()">里面</view>
-		</view>
+		<!-- <view>{{name}}</view> -->
+		<view>{{num}}</view>
+		<view>{{num>10?'Yes':'No'}}</view>
+		<button type="primary" @tap="change()">修改</button>
 	</view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				name:"哈哈哈"
+	export default{
+		data(){
+			return{
+				name:"我是一个名称",
+				num:0
+			}
+		},
+		watch:{
+			name:function(val){
+				console.log(val)
+			},
+			num:function(val){
+				console.log(val)
 			}
 		},
 		methods:{
-			clickEvent:function(){
-				this.name="xixixi"
-				console.log(this.name)
-			},
-			box1event:function(){
-				console.log("点击了外面")
-			},
-			box2event:function(){
-				console.log("点击了里面")
-				
+			change:function(){
+				// this.name="被修改"
+				this.num++
 			}
 		}
 	}
 </script>
 
 <style>
-.box1{
-	width: 100%;
-	height: 500upx;
-	background: #007AFF;
-	color: #FFFFFF;
-	font-size: 40upx;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.box2{
-	width: 300upx;
-	height: 300upx;
-	background: #09BB07;
-	color: #FFFFFF;
-	font-size: 40upx;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.box{
-	background: #09BB07;
-	color: #FFFFFF;
-	width: 80%;
-	margin: auto;
-	height: 80upx;
-	font-size: 50upx;
-	border-radius: 30upx;
-	border: 1upx solid #EEEEEE;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.font{
-	font-size: 50upx;
-	border: 1upx solid #CCCCCC;
-	padding: 20upx;
-}
+
 </style>
